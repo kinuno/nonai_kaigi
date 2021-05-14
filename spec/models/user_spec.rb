@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'ユーザー新規登録' do
     before do
-      # @user = FactoryBot.build(:user)
-      @user = User.new(id: 100, nickname: "aaa", email: "aaa@gmail.com", password: "000aaa", password_confirmation: "000aaa", last_name: "山田", first_name: "太郎", last_name_kana: "ヤマダ", first_name_kana: "タロウ", created_at:"2021-05-09 06:08:17.287303", updated_at: "2021-05-09 06:08:17.287303")
+      @user = FactoryBot.build(:user)
     end
 
     context '新規登録できるとき' do
@@ -28,8 +27,7 @@ RSpec.describe User, type: :model do
 
       it '重複するemailが存在していたら登録できない' do
         @user.save
-        # another_user = FactoryBot.build(:user)
-        another_user = User.new(id: 99, nickname: "bbb", email: "aaa@gmail.com", password: "000aaa", password_confirmation: "000aaa", last_name: "山田", first_name: "太郎", last_name_kana: "ヤマダ", first_name_kana: "タロウ", created_at:"2021-05-09 06:08:17.287303", updated_at: "2021-05-09 06:08:17.287303")
+        another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
         expect(another_user.errors.full_messages).to include('Email has already been taken')
