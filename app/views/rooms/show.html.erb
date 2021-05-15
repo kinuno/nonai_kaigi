@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+
+<h1><%= @room.name %>詳細ページ</h1>
+
+<li><%= link_to "Room編集", edit_room_path(@room.id), class:"room-edit" %></li>
+
+<li><%= link_to "Room削除", room_path(@room.id), method: :delete, class:"room-destroy" %></li>
+
+<p>character一覧</p>
+
+<p>character新規作成</p>
+
+<p>message画面（画面右側に）</p>
+
+
+
+
