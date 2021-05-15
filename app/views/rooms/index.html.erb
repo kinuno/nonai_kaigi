@@ -1,11 +1,25 @@
-<h1>Home</h1>
+<%= render "shared/header" %>
 
-<ul class='lists-user'>
-  <% if user_signed_in? %>
-    <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
-  <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-    <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+<h1>Home画面</h1>
+
+<% if user_signed_in?%>
+
+  <%= link_to new_room_path, class: 'newroom-btn' do %>
+    <span class='newroom-text'>Room新規作成</span>
   <% end %>
-</ul>
+
+  <div class='room-contents'>
+      <h2 class='title'>Room一覧</h2>
+      <ul class='room-lists'>
+        <% @room.each do |room|%>
+          <li class='list'>
+            <%= link_to room_path(room.id) do %> 
+            <div class='room-name'>
+                  <%= room.name %>
+            </div>
+            <% end %> 
+          </li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
