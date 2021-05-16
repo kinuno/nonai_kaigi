@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @character = Character.where(room_id: @room.id)
   end
 
   def update
