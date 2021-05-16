@@ -33,12 +33,12 @@
 
 ## Characters
 
-| Column     | Type       | Options                        |
-| -----------| ---------- | ------------------------------ |
-| name       | string     | null: false                    |
-| type       | string     | null: false                    |
-| user       | references | null: false, foreign_key: true |
-| room       | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| name        | string     | null: false                    |
+| personality | string     | null: false                    |
+| user        | references | null: false, foreign_key: true |
+| room        | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -54,7 +54,7 @@
 | ------------- | ---------- | ------------------------------ |
 | age           | integer    |                                |
 | sex_id        | integer    |                                |
-| personality   | text       |                                |
+| detail        | text       |                                |
 | character     | references | null: false, foreign_key: true |
 
 ### Association
