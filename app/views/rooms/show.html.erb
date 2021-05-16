@@ -6,7 +6,20 @@
 
 <li><%= link_to "Room削除", room_path(@room.id), method: :delete, class:"room-destroy" %></li>
 
-<p>character一覧</p>
+<div class='character-contents'>
+      <h2 class='title'>Character一覧</h2>
+      <ul class='character-lists'>
+        <% @character.each do |character|%>
+          <li class='list'>
+            <%= link_to room_character_path(@room.id, character.id) do %> 
+            <div class='character-name'>
+                  <%= character.name %>
+            </div>
+            <% end %> 
+          </li>
+        <% end %>
+      </ul>
+  </div>
 
 <li><%= link_to "Character新規作成", new_room_character_path(@room.id), class:"character-new" %></li>
 

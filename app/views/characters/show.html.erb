@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<h1><%= @character.name %>詳細ページ</h1>
+
+<p>キャラクター名：<%= @character.name %></p>
+
+<p>性格：<%= @character.personality %></p>
+
+<li><%= link_to "Character編集", edit_room_character_path(@room.id, @character.id), class:"character-edit" %></li>
+
+<li><%= link_to "Character削除", room_character_path(@room.id, @character.id), method: :delete, class:"character-destroy" %></li>
+
+<li><%=link_to 'もどる', room_path(@room.id), class:"back-btn" %></li>
