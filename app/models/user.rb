@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :rooms, dependent: :destroy
   has_many :characters
+  has_many :comments
        
   with_options presence: true do
    validates :nickname
