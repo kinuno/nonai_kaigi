@@ -14,7 +14,7 @@
   </div>
   <div class="edit-btn-contents">
     <%= f.submit "変更する" ,class:"edit-btn" %>
-    <%=link_to 'もどる', room_path(@room.id), class:"back-btn" %>
+    <%=link_to 'もどる', room_comments_path(@room.id), class:"back-btn" %>
   </div>
 
 <% end %>

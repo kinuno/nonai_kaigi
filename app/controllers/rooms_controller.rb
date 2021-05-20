@@ -21,11 +21,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def show
-    @character = Character.where(room_id: @room.id)
-    @comment = Comment.new
-  end
-
   def update
     if @room.update(room_params)
       redirect_to room_path(@room.id)
