@@ -23,6 +23,7 @@ class RoomsController < ApplicationController
 
   def show
     @character = Character.where(room_id: @room.id)
+    @comment = Comment.new
   end
 
   def update
