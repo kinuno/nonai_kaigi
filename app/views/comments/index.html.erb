@@ -32,6 +32,7 @@
     <p>コメント一覧</p>
     <% @comments.each do |comment|%>
       <div><%= comment.character.name%> : <%= comment.text%></div>
+      <li><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete %></li>
     <% end %>
   </div>
 

@@ -21,6 +21,12 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+    @room = Room.find(params[:room_id])
+    @comment = Comment.find(params[:id])
+    redirect_to room_comments_path(@room.id) if @comment.destroy
+  end
+
   private
 
   def comment_params
