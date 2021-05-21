@@ -13,7 +13,7 @@
       <ul class='room-lists'>
         <% @room.each do |room|%>
           <li class='list'>
-            <%= link_to room_path(room.id) do %> 
+            <%= link_to room_comments_path(room.id) do %> 
             <div class='room-name'>
                   <%= room.name %>
             </div>
@@ -23,3 +23,4 @@
       </ul>
   </div>
 <% end %>
+
