@@ -9,7 +9,7 @@
 <div class='character-contents'>
       <h2 class='title'>Character一覧</h2>
       <ul class='character-lists'>
-        <% @character.each do |character|%>
+        <% @characters.each do |character|%>
           <li class='list'>
             <%= link_to room_character_path(@room.id, character.id) do %> 
             <div class='character-name'>
@@ -40,9 +40,10 @@
   <div class = "comment-form"> 
     <p>新規コメント</p> 
     <%= form_with model: [@room, @comment], class: 'form', local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="select-character">
       <%= f.label :character_id, 'character'%>
-      <%= f.collection_select(:character_id, @character, :id, :name, {include_blank: true}, {class:"select-box", id:"comment-character"}) %> 
+      <%= f.collection_select(:character_id, @characters, :id, :name, {include_blank: true}, {class:"select-box", id:"comment-character"}) %> 
     </div> 
     <div class="form-input">
       <%= f.text_field :text, class: 'form-comment', placeholder: 'type a comment' %>

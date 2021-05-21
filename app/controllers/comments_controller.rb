@@ -3,16 +3,20 @@ class CommentsController < ApplicationController
 
   def index
     @room = Room.find(params[:room_id])
-    @character = Character.where(room_id: @room.id)
+    @characters = Character.where(room_id: @room.id)
     @comments = Comment.where(room_id: @room.id)
     @comment = Comment.new
   end
 
   def create
     @room = Room.find(params[:room_id])
+    @characters = Character.where(room_id: @room.id)
+    @comments = Comment.where(room_id: @room.id)
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to room_comments_path(@room.id)
+    else
+      render :index
     end
 
   end
