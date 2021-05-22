@@ -1,27 +1,28 @@
-<h2>Comment画面（画面右側に）</h2>
 
 <%# コメント一覧 %>
 <div class = "comments">
   <p>コメント一覧</p>
   <% @comments.each do |comment|%>
-    <div><%= comment.character.name%> : <%= comment.text%></div>
-    <li><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete %></li>
+    <div class = "comment">
+      <div class = "text"><%= comment.character.name%> : <%= comment.text%></div>
+      <div class = "button"><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete %></div>
+    </div>
   <% end %>
 </div>
 
 
 <%# コメントフォーム %>
 <div class = "comment-form"> 
-  <p>新規コメント</p> 
   <%= form_with model: [@room, @comment], class: 'form', local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-      <div class="select-character">
-        <%= f.label :character_id, 'character'%>
-        <%= f.collection_select(:character_id, @characters, :id, :name, {include_blank: true}, {class:"select-box", id:"comment-character"}) %> 
-      </div> 
-      <div class="form-input">
-        <%= f.text_field :text, class: 'form-comment', placeholder: 'type a comment' %>
+      <div class = "form-character-text">
+        <div class="select-character">
+          <%= f.collection_select(:character_id, @characters, :id, :name, {include_blank: "character"}, {class:"select-box", id:"comment-character"}) %> 
+        </div> 
+        <div class="form-input">
+          <%= f.text_field :text, class: 'form-comment', placeholder: 'type a comment' %>
+        </div>
+        <%= f.submit '送信', class: 'form-submit' %>
       </div>
-      <%= f.submit '送信', class: 'form-submit' %>
   <% end %>
 </div>

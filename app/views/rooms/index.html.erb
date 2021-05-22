@@ -1,28 +1,31 @@
 <%= render "shared/header" %>
 
-<h1>Home画面</h1>
+<div class = "top-main">
 
-<% if user_signed_in?%>
+  <h1>Home画面</h1>
 
-  <%= link_to new_room_path, class: 'newroom-btn' do %>
-    <span class='newroom-text'>Room新規作成</span>
+  <% if user_signed_in?%>
+
+    <%= link_to new_room_path, class: 'newroom-btn' do %>
+      <span class='newroom-text'>Room新規作成</span>
+    <% end %>
+
+    <div class='room-contents'>
+        <h2 class='title'>Room一覧</h2>
+        <ul class='room-lists'>
+          <% @room.each do |room|%>
+            <li class='list'>
+              <%= link_to room_comments_path(room.id) do %> 
+              <div class='room-name'>
+                    <%= room.name %>
+              </div>
+              <% end %> 
+            </li>
+          <% end %>
+        </ul>
+    </div>
   <% end %>
 
-  <div class='room-contents'>
-      <h2 class='title'>Room一覧</h2>
-      <ul class='room-lists'>
-        <% @room.each do |room|%>
-          <li class='list'>
-            <%= link_to room_comments_path(room.id) do %> 
-            <div class='room-name'>
-                  <%= room.name %>
-            </div>
-            <% end %> 
-          </li>
-        <% end %>
-      </ul>
-  </div>
-<% end %>
-
+</div>
 <%= render "shared/footer" %>
 

@@ -1,6 +1,9 @@
 .footer {
+  position: fixed;        
+  bottom: 0px;   
   width: 100vw;
-  padding: 5vh 0;
+  height: 50px; 
+  padding: auto; 
   color: #FFF;
   background-color: gray;
   text-align: center;
