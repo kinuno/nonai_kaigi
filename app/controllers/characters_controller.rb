@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     if @character.save
-      redirect_to room_path(@room)
+      redirect_to room_comments_path(@room.id)
     else 
       render :new
     end
@@ -31,7 +31,7 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-    redirect_to room_path(@room) if @character.destroy
+    redirect_to room_comments_path(@room.id) if @character.destroy
   end
 
   private

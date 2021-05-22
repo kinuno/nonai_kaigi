@@ -10,6 +10,6 @@
 
 <li><%= link_to "Character削除", room_character_path(@room.id, @character.id), method: :delete, class:"character-destroy" %></li>
 
-<li><%=link_to 'もどる', room_path(@room.id), class:"back-btn" %></li>
+<li><%=link_to 'もどる', room_comments_path(@room.id), class:"back-btn" %></li>
 
 <%= render "shared/footer" %>
