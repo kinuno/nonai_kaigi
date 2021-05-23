@@ -8,13 +8,13 @@
 
 .side-bar{
   background-color: lightblue; 
-  width: 300px; 
+  width: 250px; 
   height: calc(100vh - 150px);
 }
 
 .main-chat{
   background-color: #fafad2; 
-  width: 100vw;
+  width: calc(100vw - 250px);
   padding: 10px; 
 }
 
