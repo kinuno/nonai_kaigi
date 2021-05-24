@@ -10,7 +10,7 @@
       <div class="newroom-name">
         Room名
       </div>
-      <%= f.text_area :name, class:"newroom-text", id:"room-name", placeholder:"Room名（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_field :name, class:"newroom-text", id:"room-name", placeholder:"Room名（必須 20文字まで)", maxlength:"20" %>
     </div>
     <div class="new-btn-contents">
       <%= f.submit "作成する" ,class:"new-btn" %>
