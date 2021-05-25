@@ -25,12 +25,12 @@
 .login-field{
   /* background-color: lightskyblue; */
   width: 450px; 
-  height: 50px; 
+  height: 60px; 
 }
 
 .login-email,.login-password{
   /* background-color: lightslategray; */
-  height: 40px; 
+  height: 50px; 
   width: 450px; 
   font-size: 20px;
   font-family: sans-serif;
