@@ -1,0 +1,60 @@
+.registration-main{
+  width: 100vw; 
+  height: calc(100vh - 150px);
+  margin:100px 0 0 0;
+  display: flex; 
+  overflow: scroll;
+}
+
+.registration-form{
+  /* background-color: lightyellow; */
+  margin: 50px auto 0; 
+  width: 450px; 
+  height: 530px;
+  display: flex; 
+  flex-direction: column;
+}
+
+.registration-title{
+    /* background-color: lightgreen; */
+    text-align: center;
+    font-size: 25px; 
+    margin-bottom: 20px; 
+}
+
+.registration-field{
+  /* background-color: lightskyblue; */
+  width: 450px; 
+  /* height: 60px;  */
+}
+
+.registration-text{
+  /* background-color: lightslategray; */
+  /* height: 50px;  */
+  margin-top: 15px; 
+  width: 450px; 
+  font-size: 18px;
+  font-family: sans-serif;
+  color: gray;
+  border-bottom: solid 3px lightgray; 
+  border-top: none; 
+  border-right: none; 
+  border-left: none;
+  outline: none; 
+}
+
+.registration-action{
+  background-color: lightpink;
+  width: 450px; 
+  /* height: 50px;  */
+  margin: 40px auto; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.registration-btn{
+  height: 35px; 
+  font-size: 20px;
+  color: gray; 
+}
+

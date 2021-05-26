@@ -1,57 +1,50 @@
 <%= render "shared/header" %>
 
-<h2>Sign up</h2>
+<div class="registration-main">
+  <%= form_with(model: @user, url: new_user_registration_path, class: "registration-form") do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="registration-title">新規登録</div>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
-  </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="registration-field">
+      <%= f.text_field :nickname, class:"registration-text", placeholder: "ニックネーム" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="registration-field">
+      <%= f.email_field :email, class:"registration-text", placeholder: "メールアドレス" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="registration-field">
+      <%= f.password_field :password, class:"registration-text", placeholder: "パスワード（6文字以上）"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name" %>
-  </div>
+    <div class="registration-field">
+      <%= f.password_field :password_confirmation, class:"registration-text", placeholder: "パスワード（再入力）" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name" %>
-  </div>
+    <div class="registration-field">
+      <%= f.text_field :last_name, class:"registration-text", placeholder: "名字" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name_カナ %><br />
-    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last-name-kana" %>
-  </div>
+    <div class="registration-field">
+      <%= f.text_field :first_name, class:"registration-text", placeholder: "名前" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :first_name_カナ %><br />
-    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first-name-kana" %>
-  </div>
+    <div class="registration-field">
+      <%= f.text_field :last_name_kana, class:"registration-text", placeholder: "名字（カナ）" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="registration-field">
+      <%= f.text_field :first_name_kana,  class:"registration-text", placeholder: "名前（カナ）" %>
+    </div>
+
+    <div class="registration-action">
+      <%= f.submit "新規登録", class:"registration-btn"%>
+    </div>
+
+  <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
 
