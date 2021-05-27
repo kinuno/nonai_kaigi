@@ -4,6 +4,8 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def new
+    @room = Room.find(params[:room_id])
+    @characters = Character.where(room_id: @room.id)
     @character = Character.new
   end
 

@@ -1,0 +1,16 @@
+<h1><%= @room.name %></h1>
+
+<div class='character-contents'>
+    <h2 class='title'>Character一覧</h2>
+    <ul class='character-lists'>
+        <% @characters.each do |character|%>
+          <li class='list'>
+            <%= link_to room_character_path(@room.id, character.id) do %> 
+            <div class='character-name'>
+                <%= character.name %>
+            </div>
+            <% end %> 
+          </li>
+        <% end %>
+    </ul>
+</div>
