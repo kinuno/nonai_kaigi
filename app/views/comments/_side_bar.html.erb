@@ -1,21 +1,20 @@
-<h1><%= @room.name %></h1>
+<h1 class="room-comments-title"><%= @room.name %></h1>
 
-<li><%= link_to "Room編集", edit_room_path(@room.id), class:"room-edit" %></li>
-
-<li><%= link_to "Room削除", room_path(@room.id), method: :delete, class:"room-destroy" %></li>
+<ul class="room-edit-destroy">
+  <li><%= link_to "編集", edit_room_path(@room.id), class:"room-edit" %></li>
+  <li><%= link_to "削除", room_path(@room.id), method: :delete, class:"room-destroy" %></li>
+</ul>
 
 <div class='character-contents'>
-    <h2 class='title'>Character一覧</h2>
-    <ul class='character-lists'>
+    <h2 class='characters-index'>Character一覧</h2>
+    <ul class='characters-lists'>
         <% @characters.each do |character|%>
-          <li class='list'>
-            <%= link_to room_character_path(@room.id, character.id) do %> 
-            <div class='character-name'>
-                <%= character.name %>
-            </div>
-            <% end %> 
+          <li class='character-list'>
+            <%= link_to "#{character.name}", room_character_path(@room.id, character.id), class:"character-link" %> 
           </li>
         <% end %>
     </ul>
-    <li><%= link_to "Character新規作成", new_room_character_path(@room.id), class:"character-new" %></li>
+    <div class="new-character-box">
+      <%= link_to "Character新規作成", new_room_character_path(@room.id), class:"character-new" %>
+    </div>
 </div>
