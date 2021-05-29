@@ -96,12 +96,12 @@
 .main-chat{
   background-color: #fafad2; 
   width: calc(100vw - 250px);
-  padding: 10px; 
+  padding: 15px; 
 }
 
 .comments{
   background-color: white; 
-  height: calc(100vh - 300px ); 
+  height: calc(100vh - 250px ); 
   overflow: auto; 
 }
 
@@ -109,12 +109,52 @@
   display: flex; 
 }
 
+/* コメントフォーム */
 .comment-form{
-  background-color: lightgreen; 
+  /* background-color: lightgreen;  */
   margin-top: 10px; 
-  height: 100px; 
+  height: 60px; 
 }
 
 .form-character-text{
+  /* background-color: purple; */
+  margin-bottom: 0; 
   display: flex; 
+  justify-content: space-between;
+}
+
+.select-character{
+  /* background-color: orange; */
+  height: 50px; 
+  width: 175px; 
+}
+
+.select-box{
+  display: block;
+  margin-top: 5px ; 
+  height: 40px; 
+  width: 175px; 
+  font-size: 15px;
+}
+
+.form-input{
+  /* background-color: yellow; */
+  height: 50px; 
+  width: calc(100vw - 520px);
+}
+
+.form-comment{
+  display: block;
+  margin-top: 5px ; 
+  height: 40px; 
+  width: calc(100vw - 520px);
+  font-size: 15px;
+}
+
+.form-comment-submit{
+  display: block;
+  margin-top: 5px ; 
+  height: 40px; 
+  width: 50px; 
+  font-size: 15px;
 }
