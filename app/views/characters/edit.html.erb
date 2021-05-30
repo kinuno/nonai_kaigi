@@ -1,26 +1,37 @@
 <%= render "shared/header" %>
 
-<h1><%= @character.name %>編集ページ</h1>
-
-<%= form_with model:[@room, @character], local: true do |f| %>
-
-  <%= render 'shared/error_messages', model: f.object %>
-
-  <div class="new-characters">
-    <div class="weight-bold-text">
-      Character名
-    </div>
-    <%= f.text_area :name, class:"characters-text", id:"character-name", placeholder:"Character名（必須 20文字まで)", maxlength:"20" %>
-    <div class="weight-bold-text">
-      性格
-    </div>
-    <%= f.text_area :personality, class:"characters-text", id:"character-personality", placeholder:"Characterの性格（必須 40文字まで)", maxlength:"40" %>
-  </div>
-  <div class="edit-btn-contents">
-    <%= f.submit "変更する" ,class:"edit-btn" %>
-    <%=link_to 'もどる', room_character_path(@room.id, @character.id), class:"back-btn" %>
+<div class="main">
+  <div class = "side-bar">
+      <%= render "side_bar" %>
   </div>
 
-<% end %>
+  <div class="editcharacter-main">
+
+    <%= form_with model:[@room, @character], class:"editcharacter-form", local: true do |f| %>
+
+      <div class="editcharacter-title">Character編集</div>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="edit-characters">
+        <div class="editcharacter-label">
+          Character名
+        </div>
+        <%= f.text_area :name, class:"editcharacter-name", id:"character-name", placeholder:"Character名（必須 20文字まで)", maxlength:"20" %>
+        <div class="editcharacter-label">
+          性格
+        </div>
+        <%= f.text_area :personality, class:"editcharacter-personality", id:"character-personality", placeholder:"Characterの性格（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="editcharacter-btn-contents">
+        <%= f.submit "変更する" ,class:"editcharacter-btn" %>
+        <%=link_to 'もどる', room_character_path(@room.id, @character.id), class:"editcharacter-back-btn" %>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>
 
 <%= render "shared/footer" %>

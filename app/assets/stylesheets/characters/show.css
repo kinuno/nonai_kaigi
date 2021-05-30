@@ -1,0 +1,86 @@
+.showcharacter-main{
+  width: calc(100vw - 250px); 
+  height: calc(100vh - 150px);
+  /* margin:100px 0 50px 0; */
+  background-color: white; 
+  overflow: scroll;
+}
+
+.showcharacter-box{
+  margin: 30px auto 0px; 
+  
+  /* background-color: lightyellow; */
+  display: flex; 
+  flex-direction: column;
+  width: 500px; 
+}
+.showcharacter-title{
+  /* background-color: lightpink; */
+  height: 50px; 
+  width: 500px; 
+  font-size: 40px;
+  text-align: center;
+}
+
+.show-character{
+  /* background-color: lightseagreen;  */
+  margin-top: 20px; 
+}
+
+.showcharacter-label{
+  /* background-color: lightskyblue; */
+  margin-top: 20px; 
+  width: 500px; 
+  font-size: 20px;
+}
+
+.show-charactername, .show-characterpersonality{
+  border-bottom: solid 1px gray;
+  padding-bottom: 5px; 
+}
+
+.showcharacter-text{
+  /* background-color: gray; */
+  width: 500px; 
+  margin-left: 20px;
+  margin-top: 3px; 
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.character-edit-btn{
+  margin-top: 30px; 
+  background-color: rgb(231, 231, 231);
+  border: solid 1px gray; 
+  border-radius: 2%;
+  height: 40px; 
+  list-style: none;
+  line-height: 40px;
+  text-align: center;
+}
+
+.character-edit-link{
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  color: black; 
+}
+.showcharacter-btn-contents{
+  /* background-color: lightsalmon; */
+  width: 150px; 
+  height: 130px; 
+  margin-top: 20px; 
+  margin-left: 350px;
+  display: flex; 
+  flex-direction: column;
+  list-style: none;
+}
+
+.showcharacter-btn-content{
+  margin-bottom: 10px;
+}
+
+.character-destroy-link,.showcharacter-back-btn{
+  color: gray; 
+  font-size: 17px;
+}

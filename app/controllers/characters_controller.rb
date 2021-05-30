@@ -19,9 +19,11 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @characters = Character.where(room_id: @room.id)
   end
 
   def edit
+    @characters = Character.where(room_id: @room.id)
   end
 
   def update

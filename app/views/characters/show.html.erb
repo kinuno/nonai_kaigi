@@ -1,15 +1,38 @@
 <%= render "shared/header" %>
 
-<h1><%= @character.name %>詳細ページ</h1>
+<div class="main">
+  <div class = "side-bar">
+      <%= render "side_bar" %>
+  </div>
 
-<p>キャラクター名：<%= @character.name %></p>
+  <div class="showcharacter-main">
+    <div class="showcharacter-box">
+      <div class="showcharacter-title">Character詳細</div>
 
-<p>性格：<%= @character.personality %></p>
+      <div class="show-character">
+        <div class="showcharacter-label">
+          <span class="show-charactername">Character名</span>
+        </div>
+        <div class="showcharacter-text">・<%= @character.name %></div>
 
-<li><%= link_to "Character編集", edit_room_character_path(@room.id, @character.id), class:"character-edit" %></li>
+        <div class="showcharacter-label">
+          <span class="show-characterpersonality">性格</span>
+          </div>
+        <div class="showcharacter-text">・<%= @character.personality %></div>
+      </div>
 
-<li><%= link_to "Character削除", room_character_path(@room.id, @character.id), method: :delete, class:"character-destroy" %></li>
+      <div class="character-edit-btn">
+        <li><%= link_to "Character編集", edit_room_character_path(@room.id, @character.id), class:"character-edit-link" %></li>
+      </div>
 
-<li><%=link_to 'もどる', room_comments_path(@room.id), class:"back-btn" %></li>
+      <div class="showcharacter-btn-contents">
+        <li class="showcharacter-btn-content"><%= link_to "Character削除", room_character_path(@room.id, @character.id), method: :delete, class:"character-destroy-link" %></li>
+
+        <li class="showcharacter-btn-content"><%=link_to 'もどる', room_comments_path(@room.id), class:"showcharacter-back-btn" %></li>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <%= render "shared/footer" %>
