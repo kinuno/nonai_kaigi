@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+/* ヘッダー全体 */
+.top-page-header {
+  position: fixed;
+  top: 0px; 
+  width: 100vw;
+  height: 100px; 
+  display: flex;
+  align-items: center; 
+  background-color: lightgray; 
+}
+
+/* タイトル */
+.top-title{
+  /* background-color: lightblue;  */
+  height: 80px; 
+  width: 250px; 
+  display:flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.app-title{
+  font-size: 40px; 
+  font-weight: bold;
+  text-decoration: none;
+  color: #333333;
+  /* background-color: lightseagreen; */
+}
+
+/* ログインとかのリンク全体 */
+.nav-lists{
+  /* background-color: lightgreen; */
+  height: 50px; 
+  width: 230px; 
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  font-size: 18px; 
+  color: #333333;
+}
+
+/* リンクそれぞれ */
+.nav-logout,.nav-login,.nav-sign-up,.nav-user-nickname {
+  text-align: center;
+}
+
+.logout,.login,.sign-up,.user-nickname {
+  text-decoration: none;
+  color: #333333;
+  /* background-color: linen; */
+}
+
+.nav-logout,.nav-login,.nav-sign-up {
+  height: 30px;
+  width: 100px; 
+  border: solid 2px white; 
+  border-radius: 5%; 
+}
+
+.user-nickname {
+  font-weight: bold;
+  /* background-color: linen; */
+}
+
+.home-btn{
+  /* background-color: lightpink; */
+  height: 50px; 
+  width: 100px; 
+  margin-left: calc(100vw - 600px);
+  line-height: 50px; 
+  text-align: center;
+}
+
+.home-link{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
+}

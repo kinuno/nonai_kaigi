@@ -1,0 +1,22 @@
+<div class="roomname-contents">
+  <h2 class="room-comments-title"><%= @room.name %></h2>
+
+  <ul class="room-edit-destroy">
+    <li><%= link_to "編集", edit_room_path(@room.id), class:"room-edit" %></li>
+    <li><%= link_to "削除", room_path(@room.id), method: :delete, class:"room-destroy" %></li>
+  </ul>
+</div>
+
+<div class='character-contents'>
+    <h2 class='characters-index'>Character一覧</h2>
+    <ul class='characters-lists'>
+        <% @characters.each do |character|%>
+          <li class='character-list'>
+            <%= link_to "#{character.name}", room_character_path(@room.id, character.id), class:"character-link" %> 
+          </li>
+        <% end %>
+    </ul>
+    <div class="new-character-box">
+      <%= link_to "Character新規作成", new_room_character_path(@room.id), class:"character-new" %>
+    </div>
+</div>

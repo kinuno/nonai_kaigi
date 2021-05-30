@@ -4,22 +4,26 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def new
+    @room = Room.find(params[:room_id])
+    @characters = Character.where(room_id: @room.id)
     @character = Character.new
   end
 
   def create
     @character = Character.new(character_params)
     if @character.save
-      redirect_to room_path(@room)
+      redirect_to room_comments_path(@room.id)
     else 
       render :new
     end
   end
 
   def show
+    @characters = Character.where(room_id: @room.id)
   end
 
   def edit
+    @characters = Character.where(room_id: @room.id)
   end
 
   def update
@@ -31,7 +35,7 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-    redirect_to room_path(@room) if @character.destroy
+    redirect_to room_comments_path(@room.id) if @character.destroy
   end
 
   private

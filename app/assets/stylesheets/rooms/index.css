@@ -1,0 +1,72 @@
+.top-main{
+  width: 100vw; 
+  height: calc(100vh - 150px);
+  margin:100px 0 50px 0;
+  display: flex; 
+}
+
+.room-contents{
+  /* background-color: lightblue;  */
+  width: 250px; 
+  height: calc(100vh - 150px);
+  border-right: solid 2px lightgray;
+}
+
+
+.room-index{
+  /* background-color: lightskyblue;  */
+  height: 50px; 
+  width: 200px; 
+  margin: 40px auto; 
+  /* padding-left: 5px;  */
+  text-align: center;
+  font-size: 35px; 
+  font-weight: bold;
+}
+
+.room-lists{
+  /* background-color: lightgreen;  */
+  width: 200px; 
+  height: calc(100vh - 280px);
+  margin: auto; 
+  display: flex; 
+  flex-direction: column;
+  font-size: 20px; 
+  padding-left: 5px; 
+  overflow: auto; 
+}
+
+.room-list{
+  /* background-color: green; */
+margin-bottom: 5px;
+
+}
+
+.room-name{
+  /* background-color: pink;  */
+  text-decoration: none;
+  color: black; 
+  border-bottom: solid 1px gray;
+}
+
+.new-room{
+  width: calc(100vw - 250px);
+  display: flex; 
+}
+
+.newroom-link{
+  background-color: lightgray; 
+  height: 70px; 
+  width: 400px; 
+  line-height: 70px;
+  margin: auto; 
+  /* padding-left: 5px;  */
+  text-align: center;
+}
+
+.newroom-btn{
+  text-decoration: none;
+  color: black; 
+  font-size: 35px; 
+  font-weight: bold;
+}
