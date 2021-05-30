@@ -1,11 +1,14 @@
 
 <%# コメント一覧 %>
 <div class = "comments">
-  <p>コメント一覧</p>
+  <%# <p>コメント一覧</p> %>
   <% @comments.each do |comment|%>
     <div class = "comment">
-      <div class = "text"><%= comment.character.name%> : <%= comment.text%></div>
-      <div class = "button"><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete %></div>
+      <div class ="chara-icon"><%= comment.character.name%>：</div>
+      <div class ="comment-line">
+        <div class = "comment-text"><%= comment.text%></div>
+        <div class = "comment-button"><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete , class:"comment-delete"%></div>
+      </div>
     </div>
   <% end %>
 </div>
