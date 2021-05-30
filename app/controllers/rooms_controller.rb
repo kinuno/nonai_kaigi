@@ -21,6 +21,10 @@ class RoomsController < ApplicationController
     end
   end
 
+  def edit
+    @characters = Character.where(room_id: @room.id)
+  end
+
   def update
     if @room.update(room_params)
       redirect_to room_comments_path(@room.id)

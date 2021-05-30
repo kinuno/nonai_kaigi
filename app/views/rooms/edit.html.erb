@@ -1,23 +1,30 @@
 <%= render "shared/header" %>
 
-<div class="editroom-main">
+<div class="main">
+  <div class = "side-bar">
+      <%= render "characters/side_bar" %>
+  </div>
 
-  <%= form_with model:@room, local: true, class:"editroom-form" do |f| %>
+  <div class="editroom-main">
 
-    <%= render 'shared/error_messages', model: f.object %>
+    <%= form_with model:@room, local: true, class:"editroom-form" do |f| %>
 
-    <div class="edit-rooms">
-      <div class="editroom-text">
-        Room名
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="edit-rooms">
+        <div class="editroom-text">
+          Room名
+        </div>
+        <%= f.text_area :name, class:"editroom-text", id:"room-name", placeholder:"Room名（必須 20文字まで)", maxlength:"20" %>
       </div>
-      <%= f.text_area :name, class:"editroom-text", id:"room-name", placeholder:"Room名（必須 20文字まで)", maxlength:"20" %>
-    </div>
-    <div class="edit-btn-contents">
-      <%= f.submit "変更する" ,class:"edit-btn" %>
-      <%=link_to 'もどる', room_comments_path(@room.id), class:"back-btn" %>
-    </div>
+      <div class="edit-btn-contents">
+        <%= f.submit "変更する" ,class:"edit-btn" %>
+        <%=link_to 'もどる', room_comments_path(@room.id), class:"back-btn" %>
+      </div>
 
-  <% end %>
+    <% end %>
+
+  </div>
 
 </div>
 

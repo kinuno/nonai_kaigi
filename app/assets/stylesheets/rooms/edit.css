@@ -1,7 +1,7 @@
 .editroom-main{
-  width: 100vw; 
+  width: calc(100vw - 250px); 
   height: calc(100vh - 150px);
-  margin:100px 0 50px 0;
+  /* margin:100px 0 50px 0; */
   display: flex;
   /* background-color: lightpink;  */
   overflow: scroll;
