@@ -100,13 +100,13 @@
 
 /* コメント表示 */
 .main-chat{
-  /* background-color: #fafad2;  */
+  /* background-color: #fffbe6; */
   width: calc(100vw - 250px);
   padding: 15px; 
 }
 
 .comments{
-  background-color: white; 
+  /* background-color: white;  */
   height: calc(100vh - 240px ); 
   overflow: auto; 
 }
