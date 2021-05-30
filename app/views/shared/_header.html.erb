@@ -1,6 +1,6 @@
 <header class='top-page-header'>
   <div class="top-title">
-    <%= link_to '脳内会議', root_path, class: "home" %>
+    <%= link_to '脳内会議', root_path, class: "app-title" %>
   </div>
   <div class="nav-lists">
     <% if user_signed_in? %>
@@ -11,4 +11,7 @@
       <li class="nav-sign-up"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
     <% end %>
   </div>
+  <div class="home-btn">
+    <%= link_to 'HOME', root_path, class: "home-link" %>
+  </div>  
 </header>
