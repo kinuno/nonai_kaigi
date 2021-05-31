@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @characters = Character.where(room_id: @room.id)
     if @character.save
       redirect_to room_comments_path(@room.id)
     else 

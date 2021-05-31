@@ -12,6 +12,7 @@
   width: 250px; 
   height: calc(100vh - 150px);
   border-right: solid 2px lightgray;
+  overflow: scroll;
 }
 
 .roomname-contents{
@@ -58,7 +59,16 @@
 .characters-index{
   /* background-color: pink; */
   margin-top: 20px; 
+  font-size: 25px; 
+  font-weight: bold;
   text-align: center; 
+}
+
+.max-characters{
+  /* background-color: blue; */
+  margin-top: 5px; 
+  font-size: 15px;
+  text-align: center;
 }
 
 .characters-lists{
@@ -82,7 +92,7 @@
   background-color: rgb(229, 229, 229); 
   height: 40px; 
   width: 200px; 
-  margin: 10px auto 0; 
+  margin: 0px auto 0; 
   text-align: center;
   line-height: 40px; 
   padding: auto; 
