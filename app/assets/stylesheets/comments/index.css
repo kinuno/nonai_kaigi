@@ -23,11 +23,12 @@
 }
 
 .room-comments-title{
-  /* background-color: lightskyblue;  */
+  background-color: lightgray; 
   width: 200px; 
   margin: 0px auto; 
   text-align: center;
   font-weight: bold;
+  font-size: 25px; 
 }
 
 .room-edit-destroy{
@@ -58,23 +59,18 @@
 
 .characters-index{
   /* background-color: pink; */
-  margin-top: 20px; 
+  margin-top: 40px; 
   font-size: 25px; 
   font-weight: bold;
   text-align: center; 
 }
 
-.max-characters{
-  /* background-color: blue; */
-  margin-top: 5px; 
-  font-size: 15px;
-  text-align: center;
-}
 
 .characters-lists{
   /* background-color: green; */
   list-style: none;
-  padding-left: 40px; 
+  margin-top: 10px; 
+  padding-left: 50px; 
   font-size: 17px; 
 }
 
@@ -106,6 +102,12 @@
   color: black; 
 }
 
+.max-characters{
+  /* background-color: blue; */
+  margin-top: 5px; 
+  font-size: 15px;
+  text-align: center;
+}
 
 
 /* コメント表示 */
@@ -143,7 +145,7 @@
   font-weight: bold;
 }
 
-.color-pink{
+.chara-pink{
   color: pink; 
   font-weight: bold;
 }
