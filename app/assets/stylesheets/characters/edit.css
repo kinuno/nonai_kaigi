@@ -3,7 +3,6 @@
   height: calc(100vh - 150px);
   /* margin:100px 0 50px 0; */
   display: flex;
-  background-color: white; 
   overflow: scroll;
 }
 
@@ -44,12 +43,19 @@
   color: gray;
 }
 
-.editcharacter-name{
+.editcharacter-name,.editcharacter-color{
   height: 40px; 
 }
 
 .editcharacter-personality{
   height: 70px; 
+}
+
+.editcharacter-color{
+  width: 500px; 
+  height: 40px; 
+  font-size: 20px;
+  color: gray;
 }
 
 .editcharacter-btn-contents{

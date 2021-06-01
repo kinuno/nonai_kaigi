@@ -23,6 +23,10 @@
           性格
         </div>
         <%= f.text_area :personality, class:"newcharacter-personality", id:"character-personality", placeholder:"Characterの性格（必須 40文字まで)", maxlength:"40" %>
+        <div class="newcharacter-label">
+          表示の色
+        </div>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"newcharacter-color"}) %>
       </div>
       <div class="newcharacter-btn-contents">
         <%= f.submit "作成する" ,class:"newcharacter-btn" %>

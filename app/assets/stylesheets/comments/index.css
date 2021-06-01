@@ -133,6 +133,56 @@
   /* background-color: lightpink; */
 }
 
+.chara-black{
+  color: black; 
+  font-weight: bold;
+}
+
+.chara-red{
+  color: red; 
+  font-weight: bold;
+}
+
+.color-pink{
+  color: pink; 
+  font-weight: bold;
+}
+
+.chara-blue{
+  color: blue; 
+  font-weight: bold;
+}
+
+.chara-lightblue{
+  color: lightblue; 
+  font-weight: bold;
+}
+
+.chara-green{
+  color: green; 
+  font-weight: bold;
+}
+
+.chara-purple{
+  color: purple; 
+  font-weight: bold;
+}
+
+.chara-orange{
+  color: orange; 
+  font-weight: bold;
+}
+
+.chara-gray{
+  color: gray; 
+  font-weight: bold;
+}
+
+.chara-lightgreen{
+  color: lightgreen; 
+  font-weight: bold;
+}
+
 .comment-line{
   /* background-color: lightskyblue; */
   margin-left: 20px; 

@@ -50,7 +50,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :personality).merge(user_id: current_user.id, room_id: params[:room_id])
+    params.require(:character).permit(:name, :personality, :color_id).merge(user_id: current_user.id, room_id: params[:room_id])
   end
 
 end

@@ -1,9 +1,12 @@
 class Character < ApplicationRecord
   MAX_CHARACTERS_COUNT = 5
-
+  
   belongs_to :user
   belongs_to :room
   has_many :comments, dependent: :destroy
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :color
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :personality, presence: true, length: { maximum: 40 }

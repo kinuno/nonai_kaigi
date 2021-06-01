@@ -34,7 +34,7 @@
   font-size: 20px;
 }
 
-.show-charactername, .show-characterpersonality{
+.show-charactername, .show-characterpersonality, .show-charactercolor{
   border-bottom: solid 1px gray;
   padding-bottom: 5px; 
 }
