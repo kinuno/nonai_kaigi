@@ -28,6 +28,7 @@ class CharactersController < ApplicationController
   end
 
   def update
+    @characters = Character.where(room_id: @room.id)
     if @character.update(character_params)
       redirect_to room_character_path(@room.id, @character.id)
     else
