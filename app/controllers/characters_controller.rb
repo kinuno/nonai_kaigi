@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @characters = Character.where(room_id: @room.id)
     if @character.save
       redirect_to room_comments_path(@room.id)
     else 
@@ -49,7 +50,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :personality).merge(user_id: current_user.id, room_id: params[:room_id])
+    params.require(:character).permit(:name, :personality, :color_id).merge(user_id: current_user.id, room_id: params[:room_id])
   end
 
 end

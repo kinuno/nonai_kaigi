@@ -1,10 +1,30 @@
 
 <%# コメント一覧 %>
-<div class = "comments">
+<div class = "comments" id="scroll-inner">
   <%# <p>コメント一覧</p> %>
   <% @comments.each do |comment|%>
     <div class = "comment">
-      <div class ="chara-icon"><%= comment.character.name%>：</div>
+      <% if comment.character.color_id == "1"%>
+        <div class ="chara-black"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "2"%>
+        <div class ="chara-red"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "3"%>
+        <div class ="chara-pink"><%= comment.character.name%></div>  
+      <% elsif comment.character.color_id == "4"%>
+        <div class ="chara-blue"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "5"%>
+        <div class ="chara-lightblue"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "6"%>
+        <div class ="chara-green"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "7"%>
+        <div class ="chara-purple"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "8"%>
+        <div class ="chara-orange"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "9"%>
+        <div class ="chara-gray"><%= comment.character.name%></div>
+      <% elsif comment.character.color_id == "10"%>
+        <div class ="chara-lightgreen"><%= comment.character.name%></div>
+      <% end %>
       <div class ="comment-line">
         <div class = "comment-text"><%= comment.text%></div>
         <div class = "comment-button"><%= link_to '削除', room_comment_path(@room.id, comment.id), method: :delete , class:"comment-delete"%></div>

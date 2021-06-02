@@ -12,6 +12,7 @@
   width: 250px; 
   height: calc(100vh - 150px);
   border-right: solid 2px lightgray;
+  overflow: scroll;
 }
 
 .roomname-contents{
@@ -22,11 +23,14 @@
 }
 
 .room-comments-title{
-  /* background-color: lightskyblue;  */
+  background-color: lightsteelblue;
+  /* background-color: lightgray;  */
   width: 200px; 
   margin: 0px auto; 
+  padding: 5px 0;
   text-align: center;
   font-weight: bold;
+  font-size: 25px; 
 }
 
 .room-edit-destroy{
@@ -57,14 +61,18 @@
 
 .characters-index{
   /* background-color: pink; */
-  margin-top: 20px; 
+  margin-top: 40px; 
+  font-size: 25px; 
+  font-weight: bold;
   text-align: center; 
 }
+
 
 .characters-lists{
   /* background-color: green; */
   list-style: none;
-  padding-left: 40px; 
+  margin-top: 10px; 
+  padding-left: 50px; 
   font-size: 17px; 
 }
 
@@ -82,7 +90,7 @@
   background-color: rgb(229, 229, 229); 
   height: 40px; 
   width: 200px; 
-  margin: 10px auto 0; 
+  margin: 0px auto 0; 
   text-align: center;
   line-height: 40px; 
   padding: auto; 
@@ -96,6 +104,12 @@
   color: black; 
 }
 
+.max-characters{
+  /* background-color: blue; */
+  margin-top: 5px; 
+  font-size: 15px;
+  text-align: center;
+}
 
 
 /* コメント表示 */
@@ -108,7 +122,7 @@
 .comments{
   /* background-color: white;  */
   height: calc(100vh - 240px ); 
-  overflow: auto; 
+  overflow: scroll; 
 }
 
 .comment{
@@ -121,6 +135,56 @@
 .chara-icon{
   /* border-bottom: solid 1px gray; */
   /* background-color: lightpink; */
+}
+
+.chara-black{
+  color: black; 
+  font-weight: bold;
+}
+
+.chara-red{
+  color: red; 
+  font-weight: bold;
+}
+
+.chara-pink{
+  color: pink; 
+  font-weight: bold;
+}
+
+.chara-blue{
+  color: blue; 
+  font-weight: bold;
+}
+
+.chara-lightblue{
+  color: lightblue; 
+  font-weight: bold;
+}
+
+.chara-green{
+  color: green; 
+  font-weight: bold;
+}
+
+.chara-purple{
+  color: purple; 
+  font-weight: bold;
+}
+
+.chara-orange{
+  color: orange; 
+  font-weight: bold;
+}
+
+.chara-gray{
+  color: gray; 
+  font-weight: bold;
+}
+
+.chara-lightgreen{
+  color: lightgreen; 
+  font-weight: bold;
 }
 
 .comment-line{

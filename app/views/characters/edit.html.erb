@@ -22,6 +22,10 @@
           性格
         </div>
         <%= f.text_area :personality, class:"editcharacter-personality", id:"character-personality", placeholder:"Characterの性格（必須 40文字まで)", maxlength:"40" %>
+        <div class="editcharacter-label">
+          表示の色
+        </div>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"editcharacter-color"}) %>
       </div>
       <div class="editcharacter-btn-contents">
         <%= f.submit "変更する" ,class:"editcharacter-btn" %>
