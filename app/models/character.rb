@@ -10,7 +10,7 @@ class Character < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :personality, presence: true, length: { maximum: 40 }
-  validate :characters_count_must_be_within_limit
+  validate :characters_count_must_be_within_limit, on: :create
 
 
   def characters_count_must_be_within_limit

@@ -7,7 +7,7 @@
 
   <div class="editcharacter-main">
 
-    <%= form_with model:[@room, @character], class:"editcharacter-form", local: true do |f| %>
+    <%= form_with model:[@room, @character], class:"editcharacter-form", method: :patch, local: true do |f| %>
 
       <div class="editcharacter-title">Character編集</div>
 
