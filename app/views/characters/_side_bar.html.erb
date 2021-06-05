@@ -1,5 +1,11 @@
 <div class="roomname-contents">
-  <h2 class="room-comments-title"><%= @room.name %></h2>
+  <div class="room-comments-title">
+    <% if @room.name != "" %>
+      <%= link_to "#{@room.name}", room_comments_path(@room.id), class:"room-title-link" %>
+    <% else %>
+      <%= link_to "#{@sidebarroom.name}", room_comments_path(@room.id), class:"room-title-link" %>
+    <% end %>
+  </div>
 </div>
 
 <div class='character-contents'>

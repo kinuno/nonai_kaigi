@@ -26,6 +26,8 @@ class RoomsController < ApplicationController
   end
 
   def update
+    @sidebarroom = Room.find(params[:id])
+    @characters = Character.where(room_id: @room.id)
     if @room.update(room_params)
       redirect_to room_comments_path(@room.id)
     else
