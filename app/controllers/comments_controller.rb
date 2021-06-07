@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: [:index, :create, :destroy]
+  before_action :move_to_root, only: [:index, :create, :destroy]
   before_action :set_characters, only: [:index, :create]
 
   def index
@@ -27,6 +28,10 @@ class CommentsController < ApplicationController
 
   def set_room
     @room = Room.find(params[:room_id])
+  end
+
+  def move_to_root
+    redirect_to root_path if current_user.id != @room.user.id 
   end
 
   def set_characters

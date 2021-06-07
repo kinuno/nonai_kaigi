@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room
+  before_action :move_to_root
   before_action :set_character, only: [:show, :edit, :update, :destroy]
   before_action :set_characters, only: [:new, :create, :show, :edit, :update]
 
@@ -37,8 +38,13 @@ class CharactersController < ApplicationController
 
   private
 
+  
   def set_room
     @room = Room.find(params[:room_id])
+  end
+  
+  def move_to_root
+    redirect_to root_path if current_user.id != @room.user.id 
   end
 
   def set_character
