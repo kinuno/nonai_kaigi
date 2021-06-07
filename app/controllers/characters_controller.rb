@@ -13,7 +13,7 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
     if @character.save
       redirect_to room_comments_path(@room.id)
-    else 
+    else
       render :new
     end
   end
@@ -38,13 +38,12 @@ class CharactersController < ApplicationController
 
   private
 
-  
   def set_room
     @room = Room.find(params[:room_id])
   end
-  
+
   def move_to_root
-    redirect_to root_path if current_user.id != @room.user.id 
+    redirect_to root_path if current_user.id != @room.user.id
   end
 
   def set_character
@@ -58,5 +57,4 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:name, :personality, :color_id).merge(user_id: current_user.id, room_id: params[:room_id])
   end
-
 end

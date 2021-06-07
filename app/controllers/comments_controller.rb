@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   end
 
   def move_to_root
-    redirect_to root_path if current_user.id != @room.user.id 
+    redirect_to root_path if current_user.id != @room.user.id
   end
 
   def set_characters
@@ -39,6 +39,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:text, :character_id).merge(user_id: current_user.id, room_id:params[:room_id])
+    params.require(:comment).permit(:text, :character_id).merge(user_id: current_user.id, room_id: params[:room_id])
   end
 end

@@ -4,9 +4,7 @@ class RoomsController < ApplicationController
   before_action :move_to_root, only: [:edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @room = Room.includes(:user).where(user_id: current_user.id).order('created_at DESC')
-    end
+    @room = Room.includes(:user).where(user_id: current_user.id).order('created_at DESC') if user_signed_in?
   end
 
   def new
@@ -17,7 +15,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     if @room.save
       redirect_to room_comments_path(@room.id)
-    else 
+    else
       render :new
     end
   end
@@ -40,7 +38,6 @@ class RoomsController < ApplicationController
     redirect_to root_path if @room.destroy
   end
 
-
   private
 
   def room_params
@@ -52,6 +49,6 @@ class RoomsController < ApplicationController
   end
 
   def move_to_root
-    redirect_to root_path if current_user.id != @room.user.id 
+    redirect_to root_path if current_user.id != @room.user.id
   end
 end
