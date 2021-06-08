@@ -45,20 +45,6 @@
 - belongs_to :user
 - belongs_to :room
 - has_many :comments
-- has_one :profile
-
-
-## Profiles
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| age           | integer    |                                |
-| sex_id        | integer    |                                |
-| detail        | text       |                                |
-| character     | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :character
 
 
 ## Comments
